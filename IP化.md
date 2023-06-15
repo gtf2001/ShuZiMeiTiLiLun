@@ -39,8 +39,8 @@ Grand Master --> Master --> Slave
 1. PTP Grand Master：在系统中使用此协议进行时钟同步的最终时间源，如同步机。普通时钟OC（Ordinary Clock）
 2. PTP Master：在单个PTP通信路径中，Master是其他时钟的直接时钟源，此时钟存在于交换机中。边界时钟BC（Boundary Clock）（通过一个端口从上游同步时间，通过其它端口向下游发送时间）、透明时钟TC（Transparent Clock）（通过一个端口从上游接收报文，矫正网络延迟，向下游发送，只对时间进行矫正），BC/TC是全局设定，交换机只能运行在BC或TC模式之一。
 3. PTP Slave：一个同步到PTP Master的时钟，如CCU、切换台、IPG等
+![image-20230614183440925](https://github.com/gtf2001/ShuZiMeiTiLiLun/assets/108125193/bd851312-ec56-4dd9-85bc-a382bab9948e)
 
-![image-20230614183440925](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230614183440925.png)
 
 ### PTP如何实现主从的同步——时间戳
 
@@ -133,21 +133,21 @@ Single Spine架构中只有Spine交换机，没有Leaf交换机，可看作最�
 
 #### 小型系统
 
-![image-20230614162956161](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230614162956161.png)
+![image-20230614162956161](https://github.com/gtf2001/ShuZiMeiTiLiLun/assets/108125193/b3904a7f-d537-4527-9954-7832a005be65)
 
 #### 中型系统
+![image-20230614163139623](https://github.com/gtf2001/ShuZiMeiTiLiLun/assets/108125193/8d861108-8d59-4903-bacf-dd49ca7169bb)
 
-![image-20230614163139623](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230614163139623.png)
 
 ### 中大型系统适用架构
+![image-20230614165648442](https://github.com/gtf2001/ShuZiMeiTiLiLun/assets/108125193/2a85693d-d6c7-425e-aeb2-e6c79c8bc947)
 
-![image-20230614165648442](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230614165648442.png)
 
 ## IP系统的可靠性保证
 
 + ST 2022-7——数据包级别高精度的无缝倒换，能实现自动选择最优数据包
 
-![image-20230614172939655](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230614172939655.png)
+![image-20230614172939655](https://github.com/gtf2001/ShuZiMeiTiLiLun/assets/108125193/186b6f63-4939-4ae7-a4a2-2506185387ec)
 
 + 高冗余性对称双网：将设备与两个相同网络连接，达到冗余备份的效果。
 + FEC（Forward Error Correction，前向纠错）是一种通过在网络传输中增加数据的冗余纠错码，使得接收端能够在网络比特流发生误码后利用这些冗余信息直接恢复出丢失的数据的一种方法。FEC编解码会带来一定的延时
